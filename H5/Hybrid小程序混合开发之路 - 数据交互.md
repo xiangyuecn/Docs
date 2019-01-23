@@ -49,7 +49,7 @@ Hybrid App并非一定是和H5的混合开发，但本文所说的专指H5。同
 
 升级版：通过改变后台`webview` `src`中的`hash`，实现数据传入我们后台页面，不管有没有重新加载，`hash`始终能被我们的H5代码接收（而且省去了处理url变化的问题）。然后由后台页面传输数据给前台页面。
 
-![](Hybrid小程序混合开发之路 - 数据交互_files/1.png)
+![](Hybrid%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF%20-%20%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92_files/1.png)
 
 ## 实战
 
@@ -83,10 +83,10 @@ Hybrid App并非一定是和H5的混合开发，但本文所说的专指H5。同
 
 ### 扫码体验
 网页版：
-![](Hybrid小程序混合开发之路 - 数据交互_files/2.png)
+![](Hybrid%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF%20-%20%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92_files/2.png)
 
 小程序版：
-![](Hybrid小程序混合开发之路 - 数据交互_files/3.png)
+![](Hybrid%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF%20-%20%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92_files/3.png)
 
 **界面和功能开发一遍，网页、小程序通吃~ 这就是Hybrid小程序的魅力！**
 
