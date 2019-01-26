@@ -1,10 +1,10 @@
 ---
-name: 评论
+name: 发表评论ddd
 about: Describe this issue template's purpose here.
-title: '发表评论asdfasdf'
+title: ''
 labels: ''
 assignees: ''
 
 ---
 
-啊撒打发斯蒂芬阿什顿发asdfasdddddvvv
+啊撒打发斯蒂芬阿什顿发dddd
