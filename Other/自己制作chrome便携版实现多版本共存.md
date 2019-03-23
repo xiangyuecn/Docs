@@ -68,4 +68,16 @@
 
 ![检查可靠性](%E8%87%AA%E5%B7%B1%E5%88%B6%E4%BD%9Cchrome%E4%BE%BF%E6%90%BA%E7%89%88%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%89%88%E6%9C%AC%E5%85%B1%E5%AD%98_files/5.png)
 
+
+`GoogleChromePortable.exe`运行后，把浏览器关闭后，这个进程可能不会自动退出，应该是秀逗了，哈哈，正常情况下应该是会和Chrome.exe主进程一块退出。
+
 本文涉及到Github：https://github.com/xiangyuecn/Docs/tree/master/Other ，里面有本文的所有资源。
+
+
+
+# :star:捐赠
+如果这个库有帮助到您，请 Star 一下。
+
+你也可以选择使用支付宝给我捐赠：
+
+![](https://github.com/xiangyuecn/Recorder/raw/master/.assets/donate-alipay.png)  ![](https://github.com/xiangyuecn/Recorder/raw/master/.assets/donate-weixin.png)
