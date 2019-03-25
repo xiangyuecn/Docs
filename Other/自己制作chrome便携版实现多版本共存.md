@@ -71,6 +71,8 @@
 
 `GoogleChromePortable.exe`运行后，把浏览器关闭后，这个进程可能不会自动退出，应该是秀逗了，哈哈，正常情况下应该是会和Chrome.exe主进程一块退出。
 
+另外：[用户数据不能在多台电脑之间共享](https://portableapps.com/node/42637)，运行中安装的扩展和cookies等信息在另外一台电脑上打开时将会丢失。便携特性只针对Chrome主程序本身，不含用户数据；多版本共存不受此影响。
+
 本文涉及到Github：https://github.com/xiangyuecn/Docs/tree/master/Other ，里面有本文的所有资源。
 
 
