@@ -82,4 +82,4 @@
 
 你也可以选择使用支付宝给我捐赠：
 
-![](https://github.com/xiangyuecn/Recorder/raw/master/.assets/donate-alipay.png)  ![](https://github.com/xiangyuecn/Recorder/raw/master/.assets/donate-weixin.png)
+![](https://github.com/xiangyuecn/Recorder/raw/master/assets/donate-alipay.png)  ![](https://github.com/xiangyuecn/Recorder/raw/master/assets/donate-weixin.png)
