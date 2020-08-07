@@ -11,7 +11,6 @@
 
 ![](%E9%9D%99%E6%80%81%E9%9B%86%E6%88%90%E8%85%BE%E8%AE%AFTBS%20X5%E5%86%85%E6%A0%B8WebView%EF%BC%8C%E4%BB%8E%E5%BE%AE%E4%BF%A1%E6%8F%90%E5%8F%96%E6%96%B0%E7%89%8830M%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%E6%89%93%E5%8C%85%E8%BF%9Bapk_files/1.png)
 
-[TOC]
 
 # 第一步：下载老版本SDK得到jar
 
@@ -25,6 +24,8 @@
 如果上面地址失效了，我在github里面存了一份jar，地址：
 ``` html
 https://github.com/xiangyuecn/Docs/blob/master/H5/静态集成腾讯TBS X5内核WebView，从微信提取新版30M浏览器内核打包进apk_files/tbs_sdk_thirdapp_v3.5.0.1063_43500_staticwithdownload_withoutGame_obfs_20171011_195714.jar
+
+SHA1: BB40F495C4CC39F41DBE34124F443B3EC43073EC
 ```
 
 ![](%E9%9D%99%E6%80%81%E9%9B%86%E6%88%90%E8%85%BE%E8%AE%AFTBS%20X5%E5%86%85%E6%A0%B8WebView%EF%BC%8C%E4%BB%8E%E5%BE%AE%E4%BF%A1%E6%8F%90%E5%8F%96%E6%96%B0%E7%89%8830M%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%E6%89%93%E5%8C%85%E8%BF%9Bapk_files/2.png)
@@ -99,7 +100,7 @@ defaultConfig {
 ## 激活X5内核
 不要用QbSdk.initX5Enviroment方法，改用QbSdk.preinstallStaticTbs方法。
 
-在显示webview前，你要先把X5内核安装好（我管他叫激活）。代码就一句话，你可以在Application里面，或者当前Activity（你得激活完后再手动创建WebView）里面执行：
+在显示webview前，你要先把X5内核安装好（我管他叫激活）。代码就一句话，你最好在当前Activity（你得激活完后再手动创建WebView）里面，或者在Application（似乎没有Activity里面激活来的稳定）里面执行：
 ``` java
 //此方法非常耗时，应当开个线程
 QbSdk.preinstallStaticTbs(getApplicationContext());
@@ -107,33 +108,66 @@ QbSdk.preinstallStaticTbs(getApplicationContext());
 //这里就可以安全的创建WebView了，只要你的ABI架构没有问题，那么这里一定能加载到X5内核
 ```
 
-简单点就在Application里面激活就行，比如这样子：
+简单点就在Activity里面激活就行，省得死活加载不了，比如这样子：
 ``` java
-public class MyApp extends Application{
-	public static Boolean X5Ok=null;
-
+public class MyActivity extends Activity {
 	@Override
-	public void onCreate(){
-		super.onCreate();
+	protected void onCreate(Bundle state) {
+		super.onCreate(state);
+		/*注意，你的布局里面不要有任何X5相关的东西，只留一个来容器放X5的WebView即可
+			<LinearLayout
+				android:id="@+id/webviewBox"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical" />
+		*/
+		setContentView(R.layout.mylayout);
 		
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				X5Ok=QbSdk.preinstallStaticTbs(getApplicationContext());
-			}
-		}).start();
+		//X5的WebView用动态创建，当内核准备好时，在创建，可能是异步也可能是同步操作
+		if(QbSdk.canLoadX5(getApplicationContext())){
+			Log.i("TBS_X5","已安装好，直接显示");
+			createWebview();
+		}else{
+			Log.i("TBS_X5","新安装");
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					boolean ok=QbSdk.preinstallStaticTbs(getApplicationContext());
+
+					Log.i("TBS_X5","安装成功："+ok);
+					runOnUiThread(new Runnable() { @Override public void run() {
+						createWebview();
+					}});
+				}
+			}).start();
+		}
+	}
+	private void createWebview(){
+		//手动创建WebView，显示到容器中，这样就能保证WebView一定是在X5内核准备好后创建的
+		WebView webView = new WebView(getApplicationContext());
+		LinearLayout.LayoutParams css=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
+		((LinearLayout)findViewById(R.id.webviewBox)).addView(webView, css);
+		
+		//...其他代码
 	}
 }
 
-/*使用的时候就在Activity里面来点暴力吧：
-	onCreate(...) {
-		while(MyApp.X5Ok==null){ System.currentTimeMillis(); }
-		
-		super.onCreate(...);
-		setContentView(...);
-		
-		if(!MyApp.X5Ok){
-			throw new RuntimeException("什么垃圾玩意");
+
+/*如果放到Application.onCreate里面激活，似乎会有点问题，测试中发现后面Activity没有加载到X5内核，移到Activity就瞬间好了。这里还是放一个例子吧
+	public class MyApp extends Application{
+		public static Boolean X5Ok=null;
+
+		@Override
+		public void onCreate(){
+			super.onCreate();
+			
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					//Application里安装就算OK了也不保证一定能用
+					X5Ok=QbSdk.preinstallStaticTbs(getApplicationContext());
+				}
+			}).start();
 		}
 	}
 */
