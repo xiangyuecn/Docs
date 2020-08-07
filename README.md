@@ -12,6 +12,8 @@
 
 2019-07-07 [设计和编写一个异步通用Picker选择器，用于时间日期、城市、商品分类的选择](https://github.com/xiangyuecn/Docs/blob/master/H5/%E8%AE%BE%E8%AE%A1%E5%92%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E5%BC%82%E6%AD%A5%E9%80%9A%E7%94%A8Picker%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%8C%E7%94%A8%E4%BA%8E%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E3%80%81%E5%9F%8E%E5%B8%82%E3%80%81%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB%E7%9A%84%E9%80%89%E6%8B%A9.md)
 
+2020-08-07 [静态集成腾讯TBS X5内核WebView，从微信提取新版30M浏览器内核打包进apk](https://github.com/xiangyuecn/Docs/blob/master/H5/%E9%9D%99%E6%80%81%E9%9B%86%E6%88%90%E8%85%BE%E8%AE%AFTBS%20X5%E5%86%85%E6%A0%B8WebView%EF%BC%8C%E4%BB%8E%E5%BE%AE%E4%BF%A1%E6%8F%90%E5%8F%96%E6%96%B0%E7%89%8830M%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%E6%89%93%E5%8C%85%E8%BF%9Bapk.md)
+
 
 # Other
 
