@@ -43,7 +43,7 @@ SHA1: BB40F495C4CC39F41DBE34124F443B3EC43073EC
 
 ## 方法1：从微信中提取
 
-微信中打开`http://debugtbs.qq.com`，进入界面后点击`拷贝内核`按钮，会弹出保存的路径（参考顶上【图3】），打开这个路径后提取里面的`core_private/x5.debug.tbs`这个文件，其实这个是一个apk/zip文件，30多M，解压后得到一堆so和jar等文件，先复制出来再说，文件名加一个zip后缀。
+微信中打开`http://debugtbs.qq.com`，进入界面后点击`拷贝内核`按钮，会弹出保存的路径（参考顶上【图3】），打开这个路径后提取里面的`core_private/x5.debug.tbs`这个文件（如果没有这个文件，就把弹出的路径中所有文件都copy出来，把30M以上文件都改成zip，能打开的就是了），其实这个是一个apk/zip文件，30多M，解压后得到一堆so和jar等文件，先复制出来再说，文件名加一个zip后缀。
 
 X5官网中 `关于TBS` -> `平台适配` 中已经写明了只支持`armeabi、armeabi-v7a、arm64-v8a` 这3种架构，因此对于`x86`等架构是不支持的（AS模拟器），抛开模拟器，大部分似乎只需提供`armeabi`架构就ok了。
 
@@ -58,7 +58,7 @@ X5内核（如果下载不了，尝试改回新版本SDK下载，然后再改回
 
 这里提供我拿到的一个内核下载地址：
 ``` html
-http://soft.tbs.imtt.qq.com/17421/tbs_res_imtt_tbs_release_integrateWithX5core_43500SDK_43656Core.zip
+http://tbs.imtt.qq.com/release/tbs_core_045318_20200714112122_nolog_fs_obfs.tbs
 
 30多M，内核版本：45318（20200714112122），Chrome 77
 ```
