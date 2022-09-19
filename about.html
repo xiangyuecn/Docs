@@ -1,0 +1,497 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" type="image/png" href="assets/icon.png">
+
+<title>终于等到你啦~ | Finally waiting for you~ | About xiangyuecn's blog </title>
+
+<script src="https://xiangyuecn.gitee.io/recorder/assets/ztest-jquery.min-1.9.1.js"></script>
+<script src="https://xiangyuecn.gitee.io/recorder/assets/zdemo.widget.donate.js"></script>
+</head>
+
+<body>
+
+<style>
+body{
+	word-wrap: break-word;
+	--word-break: break-all;
+	background:#fff center top no-repeat;
+	background-size: auto 680px;
+	margin:0;padding:0;
+}
+pre{
+	white-space:pre-wrap;
+}
+label,label *{
+	cursor: pointer;
+}
+label:hover{
+	color:#06c;
+}
+a{
+	text-decoration: none;
+	color:#06c;
+	cursor: pointer;
+}
+a:hover{
+	color:#f00;
+}
+input, textarea {
+	--outline: 0;
+	border: 1px solid #999;
+	padding: 2px;
+	box-sizing: border-box;
+	font-size: 15px;
+	line-height:24px;
+}
+
+.main{
+	
+}
+
+.mainBox{
+	margin-top:12px;
+	padding: 12px;
+	border-radius: 6px;
+	background: #fff;
+	box-shadow: 2px 2px 3px #aaa;
+}
+
+
+.mainBtn{
+	display: inline-block;
+	cursor: pointer;
+	border: none;
+	border-radius: 3px;
+	background: #f80;
+	color:#fff;
+	padding: 0 15px;
+	line-height: 36px;
+	height: 36px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.mainBtnMin{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	padding: 0 12px;
+}
+.mainBtn:hover{
+	opacity:0.8;
+}
+.mainBtn:active{
+	opacity:1;
+	background: #f00;
+}
+
+.pd{
+	padding:0 0 8px 0;
+}
+.pdT{
+	padding:8px 0 0 0;
+}
+.lb{
+	display:inline-block;
+	vertical-align: middle;
+	background:#00940e;
+	color:#fff;
+	font-size:14px;
+	padding:2px 8px;
+	border-radius: 99px;
+}
+
+.OF{
+	overflow:hidden;
+}
+.Fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.Center{
+	text-align: center;
+}
+.CenterV {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+}
+.FlexBox {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: flex;
+}
+.FlexBoxV{
+	-webkit-flex-direction:column;
+	-ms-flex-direction:column;
+	-moz-flex-direction:column;
+	flex-direction:column;
+}
+.FlexCenter{
+	-webkit-box-pack:center;
+	-ms-box-pack:center;
+	-moz-box-pack:center;
+	box-pack:center;
+	-webkit-justify-content:center;
+	-ms-justify-content:center;
+	-moz-justify-content:center;
+	justify-content:center;
+}
+.FlexCenterV{
+	-webkit-box-align:center;
+	-ms-box-align:center;
+	-moz-box-align:center;
+	box-align:center;
+	-webkit-align-items:center;
+	-ms-align-items:center;
+	-moz-align-items:center;
+	align-items:center;
+}
+.FlexItem {
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	-moz-flex: 1;
+	flex: 1;
+}
+.FlexItem2 {
+	-webkit-flex: 2;
+	-ms-flex: 2;
+	-moz-flex: 2;
+	flex: 2;
+}
+
+
+.Bold{
+	font-weight: bold;
+}
+.code{
+	padding: 15px;
+	background-color: #000;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 14px;
+	white-space: pre-wrap;
+	border-radius: 6px;
+	font-style: normal;
+}
+.i{
+	padding: 2px 4px;
+	background-color: #f6f6f6;
+	vertical-align: middle;
+	color: #c7254e;
+	font-size: 12px;
+	white-space: pre-wrap;
+	border-radius: 4px;
+	font-style: normal;
+}
+
+.navItem{
+	margin:0 15px;
+	display: inline-block;
+}
+</style>
+
+<div class="main-load Center" style="padding-top:40vh;font-size:28px">Loading...</div>
+<div class="main" style="display:none">
+
+<div class="OF" style="position:absolute;z-index:1;top:0;left:0;width:100%;height:80px;background:#e7e7e7" style2=""></div>
+<div class="OF FlexBox FlexCenterV" class2="" style="position:absolute;z-index:3;top:0;left:0;width:100%;height:80px" style2="padding:40px 0 20px;background:#e7e7e7">
+	<div class="FlexItem Center" class2="" style="font-size: 16px">
+		
+		<a class="navItem" href="https://github.com/xiangyuecn" target="_blank">
+			<span class="langCN">我的GitHub主页</span>
+			<span class="langEN">My GitHub Home</span>
+		</a>
+		
+		<a class="navItem" href="https://blog.csdn.net/xiangyuecn" target="_blank">
+			<span class="langCN">我的CSDN主页</span>
+			<span class="langEN">My CSDN Home</span>
+		</a>
+		
+		<a class="navItem" href="https://www.cnblogs.com/xiangyuecn/" target="_blank">
+			<span class="langCN">我的博客园</span>
+			<span class="langEN">My cnblogs</span>
+		</a>
+		
+		<span class="navItem">
+			<span class="langCN">关于我</span>
+			<span class="langEN">About</span>
+		</span>
+	</div>
+</div>
+
+<div class="OF FlexItem FlexBox" class2="" style2="" style="position:relative;z-index:2;height:100vh;padding-top:60px;box-sizing: border-box;">
+	<div class="OF" style="width:30vw" style2="">
+		<div class="OF FlexBox FlexBoxV" class2="" style="height:100%" style2="">
+			<div class="OF FlexItem" style="background:#918eba;border-radius:0 20px 0 0;"
+									style2="background:#918eba;">
+
+				<div class="FlexBox FlexCenterV" style="height:100%" style2="padding:40px 0">
+					<div style="padding:0 0 20px 15px;">
+						<div style="height:80px;width:80px;background:#ddd url(assets/icon.png);background-size:cover;border-radius:999px;"></div>
+					</div>
+					<div class="FlexItem" style="padding:0 0 20px 15px;color:#fff;">
+						<div class="Bold" style="font-size:22px">高坚果</div>
+						<div style="padding-top:4px;font-size:14px">
+							<span style="font-size:22px;margin-right:10px">xiangyuecn</span>
+							<span class="langCN">中国北京</span>
+							<span class="langEN">Beijing, China</span>
+						</div>
+						<div style="padding-top:10px">
+							<span class="langCN">一个喜欢造轮子的程序员。</span>
+							<span class="langEN">A programmer who likes to build wheels.</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="OF FlexItem" style="background:#8dd5c7;border-radius:0 20px 0 0;margin-top:-20px;">
+				
+				<div class="FlexBox FlexCenterV" style="height:100%" style2="padding:20px 0">
+					<div class="FlexItem" style="padding:0 0 20px 15px;color:#fff;">
+						<div class="Bold" style="font-size:18px">
+							<span class="langCN">有一个QQ群，找我唠嗑</span>
+							<span class="langEN">There is a QQ group that can communicate with me</span>
+						</div>
+						<div style="padding-top:8px">
+							<span class="langCN">主要用于我的几个开源项目的交流和支持，QQ群号：<i class="i">421882406</i>，口令：<i class="i">xiangyuecn</i></span>
+							<span class="langEN">Mainly used for the communication and support of several of my open source projects, QQ group number: <i class="i">421882406</i>, code: <i class="i">xiangyuecn</i></span>
+						</div>
+					</div>
+					<div style="padding:0 15px 20px 15px;">
+						<div style="height:180px;width:120px;background:url(https://xiangyuecn.gitee.io/recorder/assets/qq_group_421882406.png) center center no-repeat;background-size:contain;"></div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="OF FlexItem FlexBox FlexBoxV Center" style="background:#e7e7e7 url(assets/bg-jx.jpg) right bottom no-repeat;background-size:25vh;border-radius:0 20px 0 0;margin-top:-20px;font-size:22px">
+				
+				<div class="OF FlexItem FlexBox FlexCenterV" style="height:100%" style2="">
+					<div class="FlexItem" style="color:#7570c4;padding-top:30px;">
+						<span class="langCN msg1CN1"></span>
+						<span class="langEN msg1EN1"></span>
+					</div>
+				</div>
+				<div class="OF FlexItem FlexBox FlexCenterV" style="height:100%">
+					<div class="FlexItem" style="color:#2dd7b5">
+						<span class="langCN msg1CN2"></span>
+						<span class="langEN msg1EN2"></span>
+					</div>
+				</div>
+				<div class="OF FlexItem FlexBox FlexCenterV" style="height:100%">
+					<div class="FlexItem" style="color:#f60;padding-bottom:30px;">
+						<span class="langCN msg1CN3"></span>
+						<span class="langEN msg1EN3"></span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="OF FlexItem FlexBox FlexBoxV" class2="" style="padding:0 360px 0 20px;" style2="padding:0 10px">
+		<div class="OF FlexItem" style="height:100%;overflow-y:auto;" style2="">
+			<div class="Bold" style="padding-top:40px;color:#f60;font-size:22px">
+				<span class="langCN">信息简介</span>
+				<span class="langEN">Introduction</span>
+			</div>
+			<div style="text-indent:32px;font-size:15px;padding-top:10px">
+				<span class="langCN">大龄程序员+头已秃👴，灵活就业人员，靠做外包项目糊口；待机中，随时可接外包私活。</span>
+				<span class="langEN">Elderly programmer + bald head, Freelancer, living on outsourcing projects; in standby, i can take outsourced private work anytime.</span>
+			</div>
+			<div style="text-indent:32px;font-size:15px;padding-top:10px">
+				<span class="langCN">全栈，全干，会做的主要事情有：小程序、App、网站的前端、后端开发，原型交互设计，应用架构、程序数据库性能调优、加功能修Bug，等一切和程序搭得到边的咨询和服务。 </span>
+				<span class="langEN">Full stack, full dry, the main things that will be done are: front-end and back-end development of small programs, apps, websites, prototype interaction design, application architecture, program database performance tuning, adding functions and fixing bugs, etc. Everything can be matched with the program side advice and services.</span>
+			</div>
+		</div>
+		<div class="OF FlexItem2" style="height:100%;overflow-y:auto;padding-top:20px;"  style2="padding-top:40px">
+			<div class="Bold" style="color:#f60;font-size:22px">
+				<span class="langCN">开源作品</span>
+				<span class="langEN">Open source project</span>
+			</div>
+			<div>
+				<style>
+					.gitItem{ padding-top:10px;font-size:13px;color:#999; }
+					.gitItem>a{font-size:16px}
+				</style>
+				
+				<div class="gitItem">
+					<a href="https://xiangyuecn.gitee.io/recorder/" target="_blank">Recorder</a>
+					<span class="langCN">：HTML5录音js库，支持多种录音格式，提供了丰富的扩展插件：音频可视化、实时处理、语音识别。</span>
+					<span class="langEN">: HTML5 recording js library, supports a variety of recording formats, provides a wealth of extension plug-ins: audio visualization, real-time processing, speech recognition.</span>
+				</div>
+				
+				<div class="gitItem">
+					<a href="https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov" target="_blank">AreaCity-JsSpider-StatsGov</a>
+					<span class="langCN">：省市区县乡镇街道四级区划数据、和坐标边界矢量数据；提供了转换工具转成：sql、geojson、shp 或导入数据库；这个库会长期维护，多级联动、echarts<a href="https://xiangyuecn.gitee.io/areacity-jsspider-statsgov/" target="_blank">在线测试</a>。</span>
+					<span class="langEN">: (No English introduction).</span>
+				</div>
+				
+				<div class="gitItem">
+					<a href="https://github.com/xiangyuecn/AreaCity-Query-Geometry" target="_blank">AreaCity-Query-Geometry</a>
+					<span class="langCN">：一个高性能的坐标数据、边界数据查询工具，Java开源程序、带http查询接口，内存占用低；1秒可查1万个以上坐标对应的城市信息。</span>
+					<span class="langEN">: A high-performance query tool for coordinate data and boundary data, Java open source program, with http query interface, low memory usage; city information corresponding to more than 10,000 coordinates can be checked in 1 second.</span>
+				</div>
+				
+				<div class="gitItem">
+					<a href="https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client" target="_blank">ACME-HTML-Web-Browser-Client</a>
+					<span class="langCN">：ACME客户端H5网页单文件版，在线免费申请签发SSL/TLS通配符泛域名HTTPS证书，支持Let's Encrypt、ZeroSSL，无需账号免登录注册。</span>
+					<span class="langEN">: ACME client H5 web page single file version, free online application and issuance of SSL/TLS wildcard pan-domain HTTPS certificate, support for Let's Encrypt, ZeroSSL, no account registration is required.</span>
+				</div>
+				
+				<div class="gitItem">
+					<a href="https://github.com/xiangyuecn/RSA-csharp" target="_blank">RSA-csharp</a>
+					<span class="langCN">：C# .NET Framework/Core下的RSA操作类，支持XML、PEM（PKCS#1、PKCS#8）格式密钥对导入、导出，纯字节码解析0依赖；另有提供<a href="https://github.com/xiangyuecn/RSA-java" target="_blank">Java版</a>。</span>
+					<span class="langEN">: RSA operation class under C# .NET Framework/Core, supports XML, PEM (PKCS#1, PKCS#8) format key pair import and export, pure bytecode parsing 0 dependencies; <a href="https://github.com/xiangyuecn/RSA-java" target="_blank">Java version</a> is also provided.</span>
+				</div>
+				
+				<div class="gitItem">
+					<a href="https://github.com/xiangyuecn/DKIM-Smtp-csharp" target="_blank">DKIM-Smtp-csharp</a>
+					<span class="langCN">：C# .NET Framework下发送DKIM签名email，支持附件，支持验证一封邮件的DKIM签名。</span>
+					<span class="langEN">: Send DKIM signed emails under C# .NET Framework, support attachments, and verify the DKIM signature of an email.</span>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="FlexBox" style2="padding:20px 0 80px">
+	<div class="FlexItem"></div>
+	<div class="mobDonateView"></div>
+	<div class="FlexItem"></div>
+</div>
+
+<div class="langBtnBox" style="position:absolute;z-index:10;top:0;right:0;padding:5px 10px;font-size:14px;border-radius:0 0 0 10px;background:#f5f5f5;">
+	Language:
+	  <a class="langBtn langBtn_cn" onclick="LangClick('cn')">中文</a>
+	| <a class="langBtn langBtn_en" onclick="LangClick('en')">EN</a>
+</div>
+
+</div>
+
+
+
+
+<script>
+(function(){
+"use strict";
+
+/************** Language **************/
+window.LangCur=/\b(zh|cn)\b/i.test(navigator.language)?"cn":"en";
+window.Lang=function(cn,en,txt){
+	if((cn||en) && (!cn||!en))throw new Error("Lang bad args");
+	if(txt)return LangCur=="cn"?cn:en;
+	var html="",ks={cn:cn,en:en};
+	for(var k in ks){
+		html+=(LangCur!=k?'<!--LangHide1-->':'')
+			+'<span class="lang'+k.toUpperCase()
+			+'" style="'+(LangCur==k?'':'display:none')
+			+'">'+ks[k]+'</span>'
+			+(LangCur!=k?'<!--LangHide2-->':'');
+	}
+	return html;
+};
+window.LangReview=function(cls){
+	var el=$(cls||"body");
+	el.find(".langCN")[LangCur=="cn"?"show":"hide"]();
+	el.find(".langEN")[LangCur!="cn"?"show":"hide"]();
+	var inputs=el.find(".inputLang");
+	for(var i=0;i<inputs.length;i++)
+		inputs[i].setAttribute("placeholder",inputs[i].getAttribute("placeholder-"+LangCur));
+};
+window.LangClick=function(lang){
+	LangCur=lang;
+	LangReview();
+	$(".langBtn").css("color","");
+	$(".langBtn_"+lang).css("color","#000");
+	
+	if(!document.titleLang)document.titleLang=document.title;
+	var arr=document.titleLang.split("|"),t1=[],t2=[];
+	for(var i=0;i<arr.length;i++)
+		if(/[^\x00-\xff]/.test(arr[i]) == (LangCur=="cn"))t1.push(arr[i].trim());
+		else t2.push(arr[i].trim());
+	document.title=t1.concat(t2).join(" | ");
+};
+
+
+/************** 一些功能 ***************/
+//中间的消息
+var MsgEN1="Sharp tools make good work 🎯";
+var MsgEN2="Nothing is impossible 💪";
+var MsgEN3="Never put off what you can do today until tomorrow 📌";
+var Msg1={
+	cn1:["本鱼塘已承包，禁止摸鱼🐟","有不少事情还没做呢，赶紧敲代码😂","记得多喝热水😜"]
+	,en1:[MsgEN1,MsgEN2,MsgEN3]
+	,cn2:["你有道灵光从天灵盖喷出来你知道嘛⚡","原来是代码写的差不多了😁","今天晚饭加鸡腿🍗"]
+	,en2:[MsgEN1,MsgEN2,MsgEN3]
+	,cn3:["抓到你了~ 还在加班写代码😂","良好的作息是生命力旺盛的基础💪","早点休息，晚安🌙"]
+	,en3:[MsgEN1,MsgEN2,MsgEN3]
+};
+window.ShowMsg1=function(idx){
+	if(!idx || idx<1 || idx>3){
+		var t=new Date().getHours();
+		idx=1;
+		if(t>=12)idx=2;
+		if(t>=20 || t<6)idx=3;
+	}
+	for(var i=1;i<=3;i++){
+		$(".msg1CN"+i).html(Msg1["cn"+idx][i-1]||"");
+		$(".msg1EN"+i).html(Msg1["en"+idx][i-1]||"");
+	}
+}
+ShowMsg1();
+
+
+/************** 初始化 **************/
+$(".main-load").hide();
+$(".main").show();
+LangClick(LangCur);
+
+if(/mobile/i.test(navigator.userAgent)){
+	var ls=$("[style2]");
+	for(var i=0;i<ls.length;i++){
+		var el=$(ls[i]);
+		el.attr("style", el.attr("style2"));
+	}
+	var ls=$("[class2]");
+	for(var i=0;i<ls.length;i++){
+		var el=$(ls[i]);
+		el.attr("class", el.attr("class2"));
+	}
+}
+
+
+
+//显示打赏
+DonateWidget({
+	mobElem:$(".mobDonateView")[0]
+	,log:function(){return false}
+	,viewOnly:true
+	,getTitle:function(title){ return Lang(title,"Donate a Coke?") }
+	,getBtn:function(btn,val){
+		return Lang(val,btn?"Donated, nice"+unescape("%uD83D%uDE18")
+			:"Forget it"+unescape("%uD83D%uDE36"));
+	}
+	,onBtnClick:function(btn){
+		alert(btn?Lang("谢谢支持，看好你哟~","Thank you for your support, you are the best~",true):Lang("加油~","It's also very good now~",true));
+		return false;
+	}
+});
+
+})();
+</script>
+
+</body>
+</html>
