@@ -1,6 +1,6 @@
-# 新开源HTML5单文件网页版ACME客户端，可在线申请Let’s Encrypt、ZeroSSL免费HTTPS多域名通配符泛域名SSL/TLS证书（RSA/ECC/ECDSA）
+# 新开源HTML5单文件网页版ACME客户端，可在线申请Let's Encrypt、ZeroSSL免费HTTPS多域名通配符泛域名SSL/TLS证书（RSA/ECC/ECDSA）
 
-之前写了两篇关于HTTPS证书的文章，一篇是本地自签证书，另一篇是Let’s Encrypt开始支持免费通配符证书时通过`diafygi/gethttpsforfree`网页来申请证书，步骤均很繁琐；于2022年9月我写了我开发了一个操作非常简单的网页版ACME客户端：[ACME-HTML-Web-Browser-Client](https://xiangyuecn.gitee.io/acme-html-web-browser-client/ACME-HTML-Web-Browser-Client.html)，并在[GitHub](https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client)、[Gitee](https://gitee.com/xiangyuecn/ACME-HTML-Web-Browser-Client)上进行了开源。
+之前写了两篇关于HTTPS证书的文章，一篇是本地自签证书，另一篇是Let's Encrypt开始支持免费通配符证书时通过`diafygi/gethttpsforfree`网页来申请证书，步骤均很繁琐；于2022年9月我写了我开发了一个操作非常简单的网页版ACME客户端：[ACME-HTML-Web-Browser-Client](https://xiangyuecn.gitee.io/acme-html-web-browser-client/ACME-HTML-Web-Browser-Client.html)，并在[GitHub](https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client)、[Gitee](https://gitee.com/xiangyuecn/ACME-HTML-Web-Browser-Client)上进行了开源。
 
 整个源码仅一个静态HTML网页文件，可以直接保存到本地使用，或通过在线网址使用；支持向 `Let's Encrypt`、`ZeroSSL` 等支持 ACME 协议的证书颁发机构，免费申请获得用于 HTTPS 的 SSL/TLS 域名证书（`RSA`、`ECC/ECDSA`），支持多域名和通配符泛域名；只需在现代浏览器上操作即可获得 PEM 格式纯文本的域名证书，不依赖操作系统环境，无需下载和安装软件，无需注册登录，纯手动操作，**只专注于申请获得证书这一件事**。
 
@@ -12,7 +12,7 @@
 # 开源项目的起源
 我自己主要是在Windows里面用的多，并不介意甚至更偏向于纯手动操作获得证书，但官方ACME客户端列表里面的能单纯提供符合我需求的寥寥无几：依赖特定操作系统环境、需要安装特定的运行环境、要自己写代码开发、甚至有的还必须捆绑线上生产环境；**而我需求仅仅是单纯的想获得一个证书文件而已，但带来的是一整套全家桶，很难专注于只申请获得证书这一件事。**
 
-常见的ACME客户端要么是需要`Bash`脚本环境，要么就是不同开发语言的源代码或者第三方库需要自己写代码；早先Let’s Encrypt的列表里面还有提供网页版的客户端列表（我在里面找到的`gethttpsforfree`），现在官方因为`“一些浏览器内 ACME 客户端可用，但我们未在此处列出它们，因为它们鼓励手动续订工作流程，这会导致糟糕的用户体验并增加错过续订的风险”`而不再展示网页版客户端列表，我很失望；也有部分支持Windows的桌面程序可以直接使用，比如`win-acme`，不过看了文档也很难上手；有部分客户端或网站甚至会要求注册并登陆账户才能使用，还帮你管理私钥（存储到他们的服务器，恨不得把通讯录都拿走），哈 ~ 呸 ~~
+常见的ACME客户端要么是需要`Bash`脚本环境，要么就是不同开发语言的源代码或者第三方库需要自己写代码；早先Let's Encrypt的列表里面还有提供网页版的客户端列表（我在里面找到的`gethttpsforfree`），现在官方因为`“一些浏览器内 ACME 客户端可用，但我们未在此处列出它们，因为它们鼓励手动续订工作流程，这会导致糟糕的用户体验并增加错过续订的风险”`而不再展示网页版客户端列表，我很失望；也有部分支持Windows的桌面程序可以直接使用，比如`win-acme`，不过看了文档也很难上手；有部分客户端或网站甚至会要求注册并登陆账户才能使用，还帮你管理私钥（存储到他们的服务器，恨不得把通讯录都拿走），哈 ~ 呸 ~~
 
 长时间我都是使用`fszlin/certes`这个.Net的库来签发证书，自己C#写的一个控制台程序，双击程序就能直接到达验证阶段，配置好DNS验证记录就能申请到证书文件，但要给别人用就麻烦了，要改C#代码；更重要的是EXE程序还有一个信任的问题，双击一个EXE程序需要承担的风险很大；**网页版就完全不同了，网页本身就带有很大程度的开放性，我们完全可以审查代码是否有加料，网页天然适合做UI，人机交互的友好性远超脚本控制台程序**，对于用不上自动化续期、或自动化在服务器进行部署证书的需求，在网页上进行申请是最理想的操作方式；比如`diafygi/gethttpsforfree`我们完全可以看到他的网页源码，还能通过浏览器控制台完全监控到网络数据流向，最为简单和可靠，虽然这个网页也是开源的，但它需要的操作太繁琐了，早先我还给他提了个我自己在用的简化签名操作的方法 [issues/164](https://github.com/diafygi/gethttpsforfree/issues/164) 。
 
@@ -31,10 +31,10 @@
 ## 使用方法
 这里介绍的是完整的操作流程，请根据步骤进行操作，很容易就能申请得到证书文件；本文图片中显示的数据都是演示用的并非真实数据。
 
-### 第一步：选择Let’s Encrypt、ZeroSSL或其他证书颁发机构
-根据上面的项目地址，打开本网页客户端（下载保存唯一的这一个html文件并双击打开、或者使用在线网址）；只要是支持ACME协议的证书颁发机构，都可以在第一步操作中填写对应地址，目前默认提供了`Let’s Encrypt`、`ZeroSSL`两家的地址，根据自己需要直接选择即可。
+### 第一步：选择Let's Encrypt、ZeroSSL或其他证书颁发机构
+根据上面的项目地址，打开本网页客户端（下载保存唯一的这一个html文件并双击打开、或者使用在线网址）；只要是支持ACME协议的证书颁发机构，都可以在第一步操作中填写对应地址，目前默认提供了`Let's Encrypt`、`ZeroSSL`两家的地址，根据自己需要直接选择即可。
 
-> 不同证书颁发机构需要的操作不一定相同，请根据提示进行操作；`Let’s Encrypt`直接到第二步操作，`ZeroSSL`由于他们的ACME服务对浏览器支持很不友好存在跨域问题，需要多操作几下（复制源码到他们服务地址页面中运行，消除跨域问题）。
+> 不同证书颁发机构需要的操作不一定相同，请根据提示进行操作；`Let's Encrypt`直接到第二步操作，`ZeroSSL`由于他们的ACME服务对浏览器支持很不友好存在跨域问题，需要多操作几下（复制源码到他们服务地址页面中运行，消除跨域问题）。
 
 ![选择证书颁发机构](开源HTML5单文件网页版ACME客户端_files/2.png)
 
@@ -49,7 +49,7 @@
 
 **ACME联系邮箱：**填写一个你常用的邮箱，证书颁发机构会在证书到期前给你推送邮件提醒续期，乱填邮箱收不到提醒。
 
-**EAB凭据：**有些ACME服务会要求提供外部账号绑定凭据（`External Account Binding`、`externalAccountBinding`、`externalAccountRequired`），比如ZeroSSL：你可以在ZeroSSL的管理控制台的 Developer 中获得此凭据，所以你需要先注册一个ZeroSSL的账号；Let’s Encrypt没有此选项。
+**EAB凭据：**有些ACME服务会要求提供外部账号绑定凭据（`External Account Binding`、`externalAccountBinding`、`externalAccountRequired`），比如ZeroSSL：你可以在ZeroSSL的管理控制台的 Developer 中获得此凭据，所以你需要先注册一个ZeroSSL的账号；Let's Encrypt没有此选项。
 
 ![配置证书](开源HTML5单文件网页版ACME客户端_files/3.png)
 
