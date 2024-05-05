@@ -7,8 +7,16 @@
 
 <title>终于等到你啦~ | Finally waiting for you~ | About xiangyuecn's blog </title>
 
-<script src="https://xiangyuecn.gitee.io/recorder/assets/ztest-jquery.min-1.9.1.js"></script>
-<script src="https://xiangyuecn.gitee.io/recorder/assets/zdemo.widget.donate.js"></script>
+<script>
+var GitPageRec="https://xiangyuecn.github.io/Recorder/";
+var GitPageArea="https://xiangyuecn.github.io/AreaCity-JsSpider-StatsGov/";
+if(/gitee\.io/.test(location.host)){ //2024-05-01 pages无通知下线
+	GitPageRec="https://xiangyuecn.gitee.io/recorder/";
+	GitPageArea="https://xiangyuecn.gitee.io/areacity-jsspider-statsgov/";
+};
+document.write('<scr\ipt src="'+GitPageRec+'assets/ztest-jquery.min-1.9.1.js"></scr\ipt>');
+document.write('<scr\ipt src="'+GitPageRec+'assets/zdemo.widget.donate.js"></scr\ipt>');
+</script>
 </head>
 
 <body>
@@ -271,7 +279,8 @@ input, textarea {
 						</div>
 					</div>
 					<div style="padding:0 15px 20px 15px;">
-						<div style="height:180px;width:120px;background:url(https://xiangyuecn.gitee.io/recorder/assets/qq_group_421882406.png) center center no-repeat;background-size:contain;"></div>
+						<div id="id_mU1d"></div>
+						<script>id_mU1d.style='height:180px;width:120px;background:url('+GitPageRec+'assets/qq_group_421882406.png) center center no-repeat;background-size:contain;'</script>
 					</div>
 				</div>
 				
@@ -327,14 +336,15 @@ input, textarea {
 				</style>
 				
 				<div class="gitItem">
-					<a href="https://xiangyuecn.gitee.io/recorder/" target="_blank">Recorder</a>
+					<a id="id_Kz3p" target="_blank">Recorder</a> <script>id_Kz3p.href=GitPageRec</script>
 					<span class="langCN">：HTML5录音js库，支持多种录音格式，提供了丰富的扩展插件：音频可视化、实时处理、语音识别。</span>
 					<span class="langEN">: HTML5 recording js library, supports a variety of recording formats, provides a wealth of extension plug-ins: audio visualization, real-time processing, speech recognition.</span>
 				</div>
 				
 				<div class="gitItem">
 					<a href="https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov" target="_blank">AreaCity-JsSpider-StatsGov</a>
-					<span class="langCN">：省市区县乡镇街道四级区划数据、和坐标边界矢量数据；提供了转换工具转成：sql、geojson、shp 或导入数据库；这个库会长期维护，多级联动、echarts<a href="https://xiangyuecn.gitee.io/areacity-jsspider-statsgov/" target="_blank">在线测试</a>。</span>
+					<span class="langCN">：省市区县乡镇街道四级区划数据、和坐标边界矢量数据；提供了转换工具转成：sql、geojson、shp 或导入数据库；这个库会长期维护，多级联动、echarts<a id="id_zI7W" target="_blank">在线测试</a>。</span>
+					<script> id_zI7W.href=GitPageArea </script>
 					<span class="langEN">: (No English introduction).</span>
 				</div>
 				
